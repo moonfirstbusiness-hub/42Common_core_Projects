@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdalma <mabdalma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 14:17:15 by mabdalma          #+#    #+#             */
-/*   Updated: 2026/10/14 15:55:14 by mabdalma         ###   ########.fr       */
+/*   Updated: 2026/10/16 13:58:53 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strlenght(char *str)
+static int	ft_strlenght(const char *str)
 {
 	int	x;
 

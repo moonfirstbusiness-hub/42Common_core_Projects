@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdalma <mabdalma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 14:22:20 by mabdalma          #+#    #+#             */
-/*   Updated: 2026/10/14 15:58:23 by mabdalma         ###   ########.fr       */
+/*   Updated: 2026/10/16 14:45:38 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 	size_t	x;
 	size_t	stl;
 
+	if(!needle)
+		return ((char *)hay);
 	stl = ft_strlenght(needle);
 	x = 0;
 	i = 0;
@@ -36,9 +38,9 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 		if (needle[i] == hay[x])
 		{
 			if (ft_strncmp(&hay[x], &needle[i], stl) == 0)
-				return (&hay[x]);
+				return ((char *)&hay[x]);
 		}
 		x++;
 	}
-	return (hay);
+	return (NULL);
 }

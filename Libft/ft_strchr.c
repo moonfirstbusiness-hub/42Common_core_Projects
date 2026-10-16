@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdalma <mabdalma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 14:12:55 by mabdalma          #+#    #+#             */
-/*   Updated: 2026/10/14 15:52:24 by mabdalma         ###   ########.fr       */
+/*   Updated: 2026/10/16 14:35:42 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_strchr(const char *str, int c)
 	while (str[x])
 	{
 		if (str[x] == (char)c)
-			return (&str[x]);
+		{
+			return ((char *)&str[x]);
+		}
 		x++;
 	}
 	return (NULL);

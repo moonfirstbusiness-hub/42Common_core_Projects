@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdalma <mabdalma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 21:31:40 by mabdalma          #+#    #+#             */
-/*   Updated: 2026/10/15 00:06:39 by mabdalma         ###   ########.fr       */
+/*   Updated: 2026/10/16 15:08:21 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	convert(char *str, int n, int x)
 
 char	*ft_itoa(int n)
 {
-	char	sing;
 	int		x;
 	int		num;
 	char	*str;
