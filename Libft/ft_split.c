@@ -6,25 +6,11 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 19:45:48 by mabdalma          #+#    #+#             */
-/*   Updated: 2026/10/16 15:20:23 by codespace        ###   ########.fr       */
+/*   Updated: 2026/10/17 15:54:31 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_find(const char *str, char c)
-{
-	size_t	x;
-
-	x = 0;
-	while(str[x])
-	{
-		if(c == str[x])
-		return (x);
-		x++;
-	}
-	return 0;
-}
 
 void	ft_free(char **split)
 {
@@ -39,39 +25,73 @@ void	ft_free(char **split)
 	free(split);
 }
 
-void	distribute(char *pre, char *suf, size_t index, char *s)
+size_t  c_word(const char * str, char c)
 {
-	size_t	x;
+    size_t  x;
+    size_t  i;
 
-	x = 0;
-	while (x < ft_strlen(s))
-	{
-		if (x < index)
-			pre[x] = s[x];
-		else
-			suf[x - index] = s[x];
-		x++;
-	}
+    i = 0;
+    x = 0;
+    while (str[x] != '\0')
+    {
+        if(str[x] == c && str[x + 1] != c)
+        {
+            i++;
+            x++;
+        }
+        x++;
+    }
+    return (i + 1);
 }
 
-char	**ft_split(char const *s, char c)
+size_t  ft_strsize(const char *s, char c)
 {
-	size_t	index;
-	char	*pre;
-	char	*suf;
-	char	**split;
+    size_t  x;
 
-	index = ft_find(s, c);
-	pre = malloc(index);
-	suf = malloc(ft_strlen(s) - index);
-	split = malloc(ft_strlen(s) + 1);
-	if (!pre || !suf || !split)
-		return (NULL);
-	distribute(pre, suf, index, (char *)s);
-	pre[index] = '\0';
-	suf[ft_strlen(s) - index] = '\0';
-	split[0] = pre;
-	split[1] = suf;
-	split[2] = '\0';
-	return (split);
+    x = 0;
+    while (s[x] != c)
+    {
+        x++;
+    }
+    return (x);
+}
+
+char **ft_split(char const *s, char c)
+{
+    char    **split;
+    size_t  i; size_t  len; size_t  x; size_t   ext;
+    
+    x = 0; i = 0; split = malloc((c_word(s, c) + 1) * sizeof(*split));
+    if (!split)
+        return NULL;
+    while (i < c_word(s, c))
+    {
+        while(s[x] == c)
+            x++;
+        len = ft_strsize(&s[x], c);
+        split[i] = malloc((len + 1) * sizeof(*split));
+        if(!split[i])
+            ft_free(split);   
+        ext = ft_strlcpy(split[i], &s[x], len);
+        x = x + len;
+        i++;
+    }
+    split[i] = NULL;
+    return (split);
+}
+
+int main()
+{
+	char const	*str = "Hello world 42 Student Awesome";
+	char		**lst;
+	int			x;
+
+	lst = ft_split(str, ' ');
+	//int lstlen = sizeof(lst);
+	x = 0;
+	while (lst[x])
+	{
+		printf("%s\n", lst[x]);
+		x++;
+	}	
 }

@@ -6,21 +6,20 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 14:18:26 by mabdalma          #+#    #+#             */
-/*   Updated: 2026/10/16 13:49:56 by codespace        ###   ########.fr       */
+/*   Updated: 2026/10/17 05:30:45 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t strlen(const char *x)
+size_t ft_strlen(const char *x)
 {
 	size_t	i;
 
 	i = 0;
-	while (x)
+	while (x[i])
 	{
 		i++;
-		x++;
 	}
 	return (i);
 }

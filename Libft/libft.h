@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 15:59:54 by mabdalma          #+#    #+#             */
-/*   Updated: 2026/10/17 04:56:59 by codespace        ###   ########.fr       */
+/*   Updated: 2026/10/17 05:31:59 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *hay, const char *needle, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t nmemb, size_t len);
-char			*strdup(const char *s);
+char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
